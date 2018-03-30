@@ -4,4 +4,8 @@
 
 01. **Linear Regression** 线性回归
 
+02. **Logistic Regression** 逻辑回归
+
 12. **KNN** K邻近算法
+
+13. **PCA** 主成分分析
