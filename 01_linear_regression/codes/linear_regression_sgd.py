@@ -13,6 +13,7 @@ class LinearRegressionSGD:
     def __init__(self, alpha = 0.01, max_iter = 100):
         self.alpha = alpha
         self.max_iter = max_iter
+        self.loss = []
 
     def fit(self, X, y):
         self.w = np.random.randn(X.shape[1]+1, 1)
@@ -20,10 +21,11 @@ class LinearRegressionSGD:
         y = y.reshape(-1, 1) # reshape (-1, 1)将y强制转成一列矩阵
         for _ in range(self.max_iter):
             y_pred = np.dot(X, self.w)
-            mse = np.mean(0.5 * (y_pred - y)**2)
+            loss = np.mean(0.5 * (y_pred - y)**2)
+            self.loss.append(loss)
+            print('%d iterator, loss is %f' % (_, loss))
             grad_w = np.dot(X.T, (y_pred - y))
             self.w -= self.alpha * grad_w
-            print(self.w)
 
     def predict(self, X):
         X = np.insert(X, 0, 1, axis=1)

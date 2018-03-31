@@ -17,7 +17,6 @@ from sklearn.preprocessing import normalize
 
 import os, sys
 sys.path.append(os.path.abspath(os.path.join('../..', 'utils')))
-from utils.check_data import *
 
 class KNN:
     def __init__(self, n_neighbors = 2, norm = False, metrics = 'euclidean', mode = 'auto'):

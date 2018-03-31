@@ -6,6 +6,16 @@
 
 02. **Logistic Regression** 逻辑回归
 
+03. **SoftMax Regression**
+
+04. **SVM** 向量机
+
+05. **Regularization** 正则化
+
+06. **Decision Tree** 决策树
+
 12. **KNN** K邻近算法
 
 13. **PCA** 主成分分析
+
+31. **Scaler**
