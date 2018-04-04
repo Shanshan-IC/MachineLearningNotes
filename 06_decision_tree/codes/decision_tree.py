@@ -63,7 +63,25 @@ class DecisionTree:
             left_node = self._build_tree(best_sets['leftX'], best_sets['leftY'], depth+1)
             right_node = self._build_tree(best_sets['rightX'], best_sets['rightY'], depth+1)
             return DecisionNode(best_criteria['feature'], best_criteria['threshold'], left_node, right_node)
-        leaf_
+        leaf_value = self._leaf_value_cal(y)
+        return DecisionNode(value=leaf_value)
 
     def fit(self, X, y):
         self.root = self._build_tree(X, y)
+
+    def predict_val(self, x, tree):
+        if tree.value is not None:
+            return tree.value
+        feature_val = x[tree.feature]
+        branch = tree.left_branch
+        if isinstance(feature_val, int) or isinstance(feature_val, float):
+            if feature_val >= tree.threshold:
+                branch = tree.right_branch
+        elif feature_val == tree.threshold:
+            branch = tree.right_branch
+        return self.predict(x, branch)
+
+    def predict(self, X):
+        y_pred = []
+        for x in X:
+            y_pred.append(self.predict_val(x, self.root))
