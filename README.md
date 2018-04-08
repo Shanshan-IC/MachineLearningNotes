@@ -14,8 +14,20 @@
 
 06. **Decision Tree** 决策树
 
+07. **Ramdon Forest** 随机森林
+
+08. **GBDT** 梯度上升
+
+09. **XGBoost**
+
+10. **Bagging v.s. Boosting**
+
+11. **Adaboost**
+
 12. **KNN** K邻近算法
 
 13. **PCA** 主成分分析
+
+14. **Kmeans** 聚类
 
 31. **Scaler**
