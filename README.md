@@ -30,4 +30,6 @@
 
 14. **Kmeans** 聚类
 
+15. **Naive Bayes** 朴素贝叶斯
+
 31. **Scaler**

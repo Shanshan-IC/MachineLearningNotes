@@ -4,3 +4,5 @@
 # @Author  : Shanshan Fu
 # @File    : gbdt.py  :
 # @Contact : 33sharewithu@gmail.com
+
+class GBDT(object):
