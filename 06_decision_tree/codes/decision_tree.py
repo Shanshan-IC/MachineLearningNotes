@@ -14,14 +14,14 @@ class DecisionNode:
         self.right_branch = right_branch
         self.value = value
 
-class DecisionTree:
+class DecisionTree(object):
     def __init__(self, min_sample_splits=2, min_impurity=1e-7, max_depth=float("inf")):
         self.rot = None
         self.min_sample_splits = min_sample_splits
         self.min_impurity = min_impurity
         self.max_depth = max_depth
         # 如果是分类问题就是信息增益，回归问题就基尼指数
-        self.__impurity_cal = None
+        self._impurity_cal = None
         self._leaf_value_cal = None #计算叶子
         self.loss = None
 
@@ -49,16 +49,17 @@ class DecisionTree:
                 unique_vals = np.unique(np.expand_dims(X[:, feature], axis=1))
                 for threshold in unique_vals:
                     Xy1, Xy2 = self._divide_features(Xy, feature, threshold)
-                    X1, y1 = Xy1[, :n_feature], Xy1[,n_feature:]
-                    X2, y2 = Xy2[, :n_feature], Xy2[, n_feature:]
-                    impurity = self.__impurity_cal(y, y1, y2)
-                    if impurity > largest_impurity:
-                        largest_impurity = impurity
-                        best_criteria = {'feture': feature, 'threshold': threshold}
-                        best_sets = {'leftX': X1,
-                                     'leftY': y1,
-                                     'rightX': X2,
-                                     'rightY': y2}
+                    if len(Xy1) > 0 and len(Xy2) > 0:
+                        X1, y1 = Xy1[:, :n_feature], Xy1[:, n_feature:]
+                        X2, y2 = Xy2[:, :n_feature], Xy2[:, n_feature:]
+                        impurity = self._impurity_cal(y, y1, y2)
+                        if impurity > largest_impurity:
+                            largest_impurity = impurity
+                            best_criteria = {'feture': feature, 'threshold': threshold}
+                            best_sets = {'leftX': X1,
+                                         'leftY': y1,
+                                         'rightX': X2,
+                                         'rightY': y2}
         if largest_impurity > self.min_sample_splits:
             left_node = self._build_tree(best_sets['leftX'], best_sets['leftY'], depth+1)
             right_node = self._build_tree(best_sets['rightX'], best_sets['rightY'], depth+1)
