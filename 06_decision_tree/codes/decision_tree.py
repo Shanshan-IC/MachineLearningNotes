@@ -45,7 +45,7 @@ class DecisionTree(object):
         best_sets = None
         if n_samples >= self.min_sample_splits and depth <= self.max_depth:
             #遍历每个特征的每个特征值
-            for feature in xrange(n_feature):
+            for feature in range(n_feature):
                 unique_vals = np.unique(np.expand_dims(X[:, feature], axis=1))
                 for threshold in unique_vals:
                     Xy1, Xy2 = self._divide_features(Xy, feature, threshold)
@@ -55,15 +55,16 @@ class DecisionTree(object):
                         impurity = self._impurity_cal(y, y1, y2)
                         if impurity > largest_impurity:
                             largest_impurity = impurity
-                            best_criteria = {'feture': feature, 'threshold': threshold}
+                            best_criteria = {'feature': feature, 'threshold': threshold}
                             best_sets = {'leftX': X1,
                                          'leftY': y1,
                                          'rightX': X2,
                                          'rightY': y2}
-        if largest_impurity > self.min_sample_splits:
+        if largest_impurity > self.min_impurity:
             left_node = self._build_tree(best_sets['leftX'], best_sets['leftY'], depth+1)
             right_node = self._build_tree(best_sets['rightX'], best_sets['rightY'], depth+1)
-            return DecisionNode(best_criteria['feature'], best_criteria['threshold'], left_node, right_node)
+            return DecisionNode(feature = best_criteria['feature'], threshold = best_criteria['threshold'],
+                                left_branch= left_node, right_branch=right_node)
         leaf_value = self._leaf_value_cal(y)
         return DecisionNode(value=leaf_value)
 
@@ -74,15 +75,16 @@ class DecisionTree(object):
         if tree.value is not None:
             return tree.value
         feature_val = x[tree.feature]
-        branch = tree.left_branch
+        branch = tree.right_branch
         if isinstance(feature_val, int) or isinstance(feature_val, float):
             if feature_val >= tree.threshold:
-                branch = tree.right_branch
+                branch = tree.left_branch
         elif feature_val == tree.threshold:
-            branch = tree.right_branch
-        return self.predict(x, branch)
+            branch = tree.left_branch
+        return self.predict_val(x, branch)
 
     def predict(self, X):
         y_pred = []
         for x in X:
             y_pred.append(self.predict_val(x, self.root))
+        return y_pred
