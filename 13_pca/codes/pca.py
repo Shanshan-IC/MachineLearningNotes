@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2017/10/12 16:17
-# @Author  : Shanshan Fu
-# @File    : PCA.py  :
-# @Contact : 33sharewithu@gmail.com
 
 import numpy as np
 

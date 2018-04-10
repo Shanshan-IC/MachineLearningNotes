@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/3/16 11:58
-# @Author  : Shanshan Fu
-# @File    : linear_regression_sgd.py  :
-# @Contact : 33sharewithu@gmail.com
 
 import numpy as np
 import sys, os

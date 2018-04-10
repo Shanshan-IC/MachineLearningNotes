@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2017/12/7 14:47
-# @Author  : Shanshan Fu
-# @File    : kd_tree.py  :
-# @Contact : 33sharewithu@gmail.com
-
 
 # kd tree的node结构
 class node:

@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/4/9 13:24
-# @Author  : Shanshan Fu
-# @File    : decision_tree_regression.py  :
-# @Contact : 33sharewithu@gmail.com
 
 from decision_tree import DecisionTree
 from info_cal import *

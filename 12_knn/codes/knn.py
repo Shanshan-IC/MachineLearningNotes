@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2017/10/10 14:29
-# @Author  : Shanshan Fu
-# @File    : KNN.py  :
-# @Contact : 33sharewithu@gmail.com
 
 # s算法
 # 计算已知类别数据集中的点与当前点的距离

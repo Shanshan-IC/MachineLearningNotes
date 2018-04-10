@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 18/3/31 下午7:43
-# @Author  : Shanshan Fu
-# @File    : softmax_regression.py
-# @Contact : 33sharewithu@gmail.com
+
 import numpy as np
 
 class SoftmaxRegression:

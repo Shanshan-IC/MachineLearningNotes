@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/3/30 13:47
-# @Author  : Shanshan Fu
-# @File    : logistic_regression.py  :
-# @Contact : 33sharewithu@gmail.com
+
 import numpy as np
 
 class LogisticRegression:

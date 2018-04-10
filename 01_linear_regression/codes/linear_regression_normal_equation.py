@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 2018/3/15 17:01
-# @Author  : Shanshan Fu
-# @File    : linear_regression_normal_equation.py  :
-# @Contact : 33sharewithu@gmail.com
 
 # 方法1：求解逆矩阵
 import numpy as np

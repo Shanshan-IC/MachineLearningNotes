@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/4/4 13:12
-# @Author  : Shanshan Fu
-# @File    : decision_tree_classification.py  :
-# @Contact : 33sharewithu@gmail.com
+
 
 from decision_tree import DecisionTree
 from info_cal import *

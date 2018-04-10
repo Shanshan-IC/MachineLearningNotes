@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/4/3 13:08
-# @Author  : Shanshan Fu
-# @File    : decision_tree.py  :
-# @Contact : 33sharewithu@gmail.com
+
 import numpy as np
 
 class DecisionNode:

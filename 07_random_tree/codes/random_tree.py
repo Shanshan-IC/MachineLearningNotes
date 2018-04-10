@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/4/9 18:50
-# @Author  : Shanshan Fu
-# @File    : random_tree.py  :
-# @Contact : 33sharewithu@gmail.com
+
 import os, sys
 sys.path.append(os.path.abspath(os.path.join('../../', '06_decision_tree/codes')))
 import numpy as np
